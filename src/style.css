@@ -1,0 +1,252 @@
+body {
+    margin: 0;
+}
+
+/* img becomes no larger than actual size. */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+#app {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start; /* main axis */
+    align-items: flex-start; /* cross axis */
+}
+
+header {
+    width: 90%;
+    margin: 0;
+    padding: 0.5em 5%;
+    background: #c62828; /* red 800 */
+    flex: initial; /* flex: 0 1 auto */
+}
+
+nav {
+    width: 90%;
+    margin: 0;
+    padding: 0.5em 5%;
+    background: #e3f2fd; /* blue 50 */
+    flex: initial; /* flex: 0 1 auto */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between; /* main axis */
+    /* align-items: center; cross axis */
+}
+
+.link {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    line-height: 1.6;
+    font-weight: 600;
+    background: transparent;
+    border: none;
+    font-weight: 600;
+}
+
+.link a {
+color:  #000;
+text-decoration: none;
+}
+
+section {
+    width: 90%;
+    margin: 0;
+    padding: 0.5em 5%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start; /* main axis */
+    align-items: flex-start; /* cross axis */
+    /*flex: 1;  needed for sticky footer */
+}
+
+.page-title {
+    border-top: 2px solid #424242; /* grey 800 */
+    border-bottom: 2px solid #424242; /* grey 800 */
+}
+
+.fire-house {
+    border-bottom: 1px solid #424242; /* grey 800 */
+}
+
+footer {
+    width: 90%;
+    margin: 0;
+    padding: 1em 5%;
+    background: #010b40; /* very dark blue */
+    flex: initial; /* flex: 0 1 auto */
+}
+
+/* TRANSITIONS ARE BELOW */
+
+/* Content slides up and fades in, slides down and fades out */
+
+/* Used on HelpBox.vue and MapBox.vue */
+.slide-up-fade-in-out-enter-from {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.slide-up-fade-in-out-leave-to {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.slide-up-fade-in-out-enter-active,
+.slide-up-fade-in-out-leave-active {
+    transition: all 1s ease-out;
+}
+
+/* FONT & "BUTTON" STYLES ARE BELOW */
+h1 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+h1 a {
+    text-decoration: none;
+    color: #fff;
+}
+
+h1 a:hover {
+    text-decoration: none;
+}
+
+h2 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+h3 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.2;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+    width: 100%;
+}
+
+p {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.8;
+    font-weight: 400;
+}
+
+p a {
+    color: #0e4996; /* dark blue */
+    text-decoration: none;
+}
+
+dt {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.8;
+    font-weight: 600;
+}
+
+dd {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.4;
+    font-weight: 400;
+    color: #424242 /* grey 800 */;
+}
+
+a.router-link-exact-active {
+    color: #c62828; /* red 800 */
+    text-decoration: none;
+}
+
+/* FONTS MEDIA QUERIES ARE BELOW */
+@media all and (min-width: 300px) {
+    h1 {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1em; /* 16px */
+    }
+
+    h3 {
+        font-size: 0.9375em; /* 15px */
+    }
+
+    p,
+    dt,
+    dd {
+        font-size: 0.875em; /* 14px */
+    }
+}
+
+@media all and (min-width: 400px) {
+    h1 {
+        font-size: 1.2em;
+    }
+
+    h2 {
+        font-size: 1.2em; /* 19.2px */
+    }
+
+    h3 {
+        font-size: 1em; /* 16px */
+    }
+
+    p,
+    dt,
+    dd {
+        font-size: 0.9375em; /* 15px */
+    }
+}
+
+@media all and (min-width: 500px) {
+    h1 {
+        font-size: 1.4em;
+    }
+
+    h2 {
+        font-size: 1.4em; /* 22.4px */
+    }
+
+    h3 {
+        font-size: 1.1em; /* 17.6px */
+    }
+
+    p,
+    dt,
+    dd {
+        font-size: 1em; /* 16px */
+    }
+}
+
+@media all and (min-width: 600px) {
+    h1 {
+        font-size: 1.6em;
+    }
+
+    h2 {
+        font-size: 1.6em; /* 25.6px */
+    }
+
+    h3 {
+        font-size: 1.2em; /* 19.2px */
+    }
+
+}
+
+/* VARIOUS "CLASSES" FOR FONTS ARE BELOW */
+
+/* makes font red */
+.warn {
+    color: #d90416; /* dark red */
+}
+
+/* makes font light grey */
+.subtle {
+    color: #616161; /* grey 700 */
+}
+
