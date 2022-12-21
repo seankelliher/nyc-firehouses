@@ -1,7 +1,7 @@
 [![MIT License on GitHub](https://img.shields.io/github/license/seankelliher/nyc-firehouses?style=flat-square)](/LICENSE.txt)
-## Header and Navigation
+## NYC Firehouses
 
-A listing on firehouses in New York City pulled NYC Open Data and built with Vue and Express.
+A listing of firehouses in New York City pulled from NYC Open Data and built with Vue and Express.
 
 ## Project Status
 
@@ -9,11 +9,11 @@ This project is currently in development.
 
 ## Project Screen Shot(s)
 
-Screenshot to come later.
+Screenshots to come.
 
 ## Installation and Setup Instructions
 
-Clone down this repository. You will need `node` and `npm` installed globally on your machine.  
+Clone down this repository. You will need `node` and `npm` installed globally on your machine. The Express server uses the Fetch API. You will need a later version of Node (18+) for this to work. 
 
 Installation:
 
@@ -34,7 +34,6 @@ Visit the localhost port displayed in the terminal after running `npm run dev`.
 ## Reflection
 
 Reflection to come.
-
 
 ## Acknowledgments
 
