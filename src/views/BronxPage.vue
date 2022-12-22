@@ -40,21 +40,31 @@ export default {
     created() {
         // Using locally -> http://localhost:4040/bronx
         // Using remotely -> /bronx
-        fetch("http://localhost:4040/bronx")
-            .then((response) => {
-                if (response.ok) {
-                    return response.json();
-                } else {
-                    return Promise.reject(response.status);
-                }
-            })
-            .then((data) => {
-                this.houses = data.houses;
-                console.log(this.houses);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+        // If localStorage is empty, fetch data.
+        if (!localStorage.getItem("housesBronx")) {
+            fetch("http://localhost:4040/bronx")
+                .then((response) => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        return Promise.reject(response.status);
+                    }
+                })
+                .then((data) => {
+                    // Add to houses array in data (above) AND localStorage.
+                    this.houses = data.houses;
+                    const housesString = JSON.stringify(data.houses);
+                    localStorage.setItem("housesBronx", housesString);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        } else {
+            // If localStorage is not empty, get data from there.
+            const localHouses = localStorage.getItem("housesBronx");
+            const localHousesParse = JSON.parse(localHouses);
+            this.houses = localHousesParse;
+        }
     },
     components: {
         PageTitle,
