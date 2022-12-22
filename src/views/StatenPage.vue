@@ -32,7 +32,7 @@ export default {
     name: "StatenPage",
     data() {
         return {
-            postals: [50022, 50023, 50024, 50025],
+            postals: [10301, 10302, 10303, 10304, 10305, 10306, 10307, 10308, 10309, 10310, 10312, 10314],
             areas: ["areaStaten1", "areaStaten2", "areaStaten3"],
             houses: []
         };
