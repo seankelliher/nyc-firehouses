@@ -5,20 +5,29 @@
 
     <AreaNames v-bind:areas = "this.areas" />
 
-    <PostalCodes v-bind:postals = "this.postals" />
+    <section id="postals">
+        <div
+            class="link"
+            v-for="postal in postals"
+            :key="postal"
+            @click="filterByPostal(postal)"
+        >
+            {{ postal }}
+        </div>
+    </section>
 
     <section
-            class="fire-house"
-            v-for="house in houses"
-            :key="house.facilityname"
-        >
-            <dl>
-                <dt>{{ house.facilityname }}</dt>
-                <dd>{{ house.facilityaddress }}</dd>
-                <dd>{{ house.borough }}, {{ house.postcode }}</dd>
-                <dd>Latitude: {{ house.latitude }}</dd>
-                <dd>Longitude: {{ house.longitude }}</dd>
-            </dl>
+        class="fire-house"
+        v-for="house in houses"
+        :key="house.facilityname"
+    >
+        <dl>
+            <dt>{{ house.facilityname }}</dt>
+            <dd>{{ house.facilityaddress }}</dd>
+            <dd>{{ house.borough }}, {{ house.postcode }}</dd>
+            <dd>Latitude: {{ house.latitude }}</dd>
+            <dd>Longitude: {{ house.longitude }}</dd>
+        </dl>
     </section>
 </template>
 
@@ -26,7 +35,6 @@
 import PageTitle from "../components/PageTitle.vue";
 import FilterOptions from "../components/FilterOptions.vue";
 import AreaNames from "../components/AreaNames.vue";
-import PostalCodes from "../components/PostalCodes.vue";
 
 export default {
     name: "BronxPage",
@@ -66,11 +74,23 @@ export default {
             this.houses = localHousesParse;
         }
     },
+    methods: {
+        filterByPostal(postal) {
+            const localHouses = localStorage.getItem("housesBronx");
+            const localHousesParse = JSON.parse(localHouses);
+            let filteredHouses = [];
+            localHousesParse.map(function(lhp) {
+                if (lhp.postcode === `${postal}`) {
+                    filteredHouses.push(lhp);
+                }
+            });
+            this.houses = filteredHouses;
+        }
+    },
     components: {
         PageTitle,
         FilterOptions,
-        AreaNames,
-        PostalCodes
+        AreaNames
     }
 };
 </script>
