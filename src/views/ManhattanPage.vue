@@ -5,16 +5,10 @@
 
     <AreaNames v-bind:areas = "this.areas" />
 
-    <section id="postals">
-        <div
-            class="link"
-            v-for="postal in postals"
-            :key="postal"
-            @click="filterByPostal(postal)"
-        >
-            {{ postal }}
-        </div>
-    </section>
+    <PostalCodes
+        :postals="postals"
+        @chosenPostalCode="(postalCode) => filterByPostal(postalCode)"
+    />
 
     <section
         class="fire-house"
@@ -34,6 +28,7 @@
 <script>
 import PageTitle from "../components/PageTitle.vue";
 import FilterOptions from "../components/FilterOptions.vue";
+import PostalCodes from "../components/PostalCodes.vue";
 import AreaNames from "../components/AreaNames.vue";
 
 export default {
@@ -75,12 +70,12 @@ export default {
         }
     },
     methods: {
-        filterByPostal(postal) {
+        filterByPostal(postalCode) {
             const localHouses = localStorage.getItem("housesManhattan");
             const localHousesParse = JSON.parse(localHouses);
             let filteredHouses = [];
             localHousesParse.map(function(lhp) {
-                if (lhp.postcode === `${postal}`) {
+                if (lhp.postcode === `${postalCode}`) {
                     filteredHouses.push(lhp);
                 }
             });
@@ -90,6 +85,7 @@ export default {
     components: {
         PageTitle,
         FilterOptions,
+        PostalCodes,
         AreaNames
     }
 };
