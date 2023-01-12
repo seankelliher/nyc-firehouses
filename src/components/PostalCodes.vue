@@ -1,7 +1,8 @@
 <template>
-    <section id="postals">
+    <h3 @click="showPostals = !showPostals">Postal Codes</h3>
+    <section v-show="showPostals">
         <div
-            class="link"
+            class="postal"
             v-for="postal in postals"
             :key="postal"
             @click="$emit('chosenPostalCode', postal)"
@@ -15,6 +16,11 @@
 
 export default {
     name: "PostalCodes",
+    data() {
+        return {
+            showPostals: false
+        };
+    },
     components: {},
     props: {
         postals: {

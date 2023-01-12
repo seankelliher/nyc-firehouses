@@ -1,10 +1,6 @@
 <template>
     <PageTitle title="Firehouses in the Queens" />
 
-    <FilterOptions />
-
-    <AreaNames v-bind:areas = "this.areas" />
-
     <PostalCodes
         :postals="postals"
         @chosenPostalCode="(postalCode) => filterByPostal(postalCode)"
@@ -27,9 +23,7 @@
 
 <script>
 import PageTitle from "../components/PageTitle.vue";
-import FilterOptions from "../components/FilterOptions.vue";
 import PostalCodes from "../components/PostalCodes.vue";
-import AreaNames from "../components/AreaNames.vue";
 
 export default {
     name: "QueensPage",
@@ -84,9 +78,7 @@ export default {
     },
     components: {
         PageTitle,
-        FilterOptions,
-        PostalCodes,
-        AreaNames
+        PostalCodes
     }
 };
 </script>
