@@ -6,24 +6,16 @@
         @chosenPostalCode="(postalCode) => filterByPostal(postalCode)"
     />
 
-    <section
-        class="fire-house"
-        v-for="house in houses"
-        :key="house.facilityname"
-    >
-        <dl>
-            <dt>{{ house.facilityname }}</dt>
-            <dd>{{ house.facilityaddress }}</dd>
-            <dd>{{ house.borough }}, {{ house.postcode }}</dd>
-            <dd>Latitude: {{ house.latitude }}</dd>
-            <dd>Longitude: {{ house.longitude }}</dd>
-        </dl>
-    </section>
+    <FireHouses
+        :houses="houses"
+    />
+
 </template>
 
 <script>
 import PageTitle from "../components/PageTitle.vue";
 import PostalCodes from "../components/PostalCodes.vue";
+import FireHouses from "../components/FireHouses.vue";
 
 export default {
     name: "StatenPage",
@@ -78,7 +70,8 @@ export default {
     },
     components: {
         PageTitle,
-        PostalCodes
+        PostalCodes,
+        FireHouses
     }
 };
 </script>
