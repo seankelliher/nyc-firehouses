@@ -1,14 +1,15 @@
 <template>
-    <h3 @click="showPostals = !showPostals">Postal Codes</h3>
+    <section>
+        <p>Find your firehouse by <span @click="showPostals = !showPostals">postal code</span>.</p>
+    </section>
     <section v-show="showPostals">
-        <div
-            class="postal"
+        <button
             v-for="postal in postals"
             :key="postal"
-            @click="$emit('chosenPostalCode', postal)"
+            @click="$emit('chosenPostalCode', postal), highlightButton($event)"
         >
-            {{ postal }}
-        </div>
+            {{ postal }}&nbsp;
+        </button>
     </section>
 </template>
 
@@ -26,6 +27,18 @@ export default {
         postals: {
             type: Array,
             required: true
+        }
+    },
+    methods: {
+        highlightButton($event){
+            const buttons = document.querySelectorAll("button");
+            const buttonsArray = Array.from(buttons);
+            buttonsArray.forEach(function(btn) {
+                if (btn.classList.contains("selected") === true) {
+                    btn.classList.remove("selected");
+                }
+            });
+            $event.target.classList.add("selected");
         }
     },
     emits: [
