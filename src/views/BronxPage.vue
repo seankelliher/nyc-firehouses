@@ -6,6 +6,11 @@
         @chosenPostalCode="(postalCode) => filterByPostal(postalCode)"
     />
 
+    <NeighborHoods
+        :neighborhoods="neighborhoods"
+        @chosenNeighborhood="(neighborhoodName) => filterByNeighborhood(neighborhoodName)"
+    />
+
     <FireHouses
         :houses="houses"
     />
@@ -15,6 +20,7 @@
 <script>
 import PageTitle from "../components/PageTitle.vue";
 import PostalCodes from "../components/PostalCodes.vue";
+import NeighborHoods from "../components/NeighborHoods.vue";
 import FireHouses from "../components/FireHouses.vue";
 
 export default {
@@ -22,7 +28,7 @@ export default {
     data() {
         return {
             postals: [10451, 10452, 10453, 10454, 10455, 10456, 10457, 10458, 10459, 10460, 10461, 10462, 10463, 10464, 10465, 10466, 10467, 10469, 10471, 10473, 10474, 10475],
-            areas: ["areaBronx1", "areaBronx2", "areaBronx3"],
+            neighborhoods: ["Kingsbridge - Riverdale", "Northeast Bronx", "Fordham - Bronx Park", "Pelham - Throgs Neck", "Crotona - Tremont", "High Bridge - Morrisania", "Hunts Point - Mott Haven"],
             houses: []
         };
     },
@@ -66,11 +72,52 @@ export default {
                 }
             });
             this.houses = filteredHouses;
+        },
+        filterByNeighborhood(neighborhoodName) {
+            const localHouses = localStorage.getItem("housesBronx");
+            const localHousesParse = JSON.parse(localHouses);
+            let filteredHouses = [];
+
+            //const expr = neighborhoodName;
+            let neighborHoodCodes = [];
+            switch (neighborhoodName) {
+            case "Kingsbridge - Riverdale" :
+                neighborHoodCodes = [10463, 10471]; // Kingsbridge - Riverdale
+                break;
+            case "Northeast Bronx" :
+                neighborHoodCodes = [10466, 10469, 10470, 10475]; // Northeast Bronx
+                break;
+            case "Fordham - Bronx Park" :
+                neighborHoodCodes = [10458, 10467, 10468]; // Fordham - Bronx Park
+                break;
+            case "Pelham - Throgs Neck" :
+                neighborHoodCodes = [10461, 10462, 10464, 10465, 10472, 10473]; // Pelham - Throgs Neck
+                break;
+            case "Crotona - Tremont" :
+                neighborHoodCodes = [10453, 10457, 10460]; // Crotona - Tremont
+                break;
+            case "High Bridge - Morrisania" :
+                neighborHoodCodes = [10451, 10452, 10456]; // High Bridge - Morrisania
+                break;
+            case "Hunts Point - Mott Haven" :
+                neighborHoodCodes = [10454, 10455, 10459, 10474]; // Hunts Point - Mott Haven
+                break;
+            default:
+                console.log("Something wrong here.");
+            }
+
+            localHousesParse.map(function(lhp) {
+                if (neighborHoodCodes.includes(Number(`${lhp.postcode}`)) === true) {
+                    filteredHouses.push(lhp);
+                }
+            });
+            this.houses = filteredHouses;
         }
     },
     components: {
         PageTitle,
         PostalCodes,
+        NeighborHoods,
         FireHouses
     }
 };
