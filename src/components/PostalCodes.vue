@@ -1,8 +1,8 @@
 <template>
-    <section>
-        <p>Find your firehouse by <span @click="showPostals = !showPostals">postal code</span>.</p>
+    <section class="filters">
+        <p @click="showPostals = !showPostals" class="common-link">Filter by postal code</p>
     </section>
-    <section v-show="showPostals">
+    <section v-show="showPostals" class="filters">
         <button
             v-for="postal in postals"
             :key="postal"
