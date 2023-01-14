@@ -1,8 +1,8 @@
 <template>
-    <section>
-        <p>Find your firehouse by <span @click="showNeighborhoods = !showNeighborhoods">neighborhood</span>.</p>
+    <section class="filters">
+        <p @click="showNeighborhoods = !showNeighborhoods" class="common-link">Filter by neighborhood</p>
     </section>
-    <section v-show="showNeighborhoods">
+    <section v-show="showNeighborhoods" class="filters">
         <button
             v-for="neighborhood in neighborhoods"
             :key="neighborhood.index"
