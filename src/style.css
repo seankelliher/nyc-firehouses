@@ -24,7 +24,7 @@ header {
     width: 90%;
     margin: 0;
     padding: 0.5em 5%;
-    background: #c62828; /* red 800 */
+    background: #bd1303; /* vibrant red */
     flex: initial; /* flex: 0 1 auto */
 }
 
@@ -32,27 +32,55 @@ nav {
     width: 90%;
     margin: 0;
     padding: 0.5em 5%;
-    background: #e3f2fd; /* blue 50 */
+    background: #001b3d; /* dark blue */
     flex: initial; /* flex: 0 1 auto */
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between; /* main axis */
-    /* align-items: center; cross axis */
+    align-items: center; /* cross axis */
 }
 
-.link {
+.nav-link {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    line-height: 1.8;
+    font-weight: 600;
+}
+
+.nav-link a {
+    color: #fff; /* white */
+    text-decoration: none;
+}
+
+.common-link {
+    color: #46464f; /* subtle dark blue */
+}
+
+.common-link:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+button {
+    margin: 0.5em 0.5em;
+    padding: 0.25em 0.25em;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1em;
     line-height: 1.6;
-    font-weight: 600;
-    background: transparent;
+    font-weight: 400;
+    /*color: #001b3d;  dark blue */
+    color: #46464f; /* subtle dark blue */
+    background: #e0e2ec; /* steel grey */
     border: none;
-    font-weight: 600;
 }
 
-.link a {
-color:  #000;
-text-decoration: none;
+button:hover {
+    background: #c4c6d0; /* darker steel grey */
+    cursor: pointer;
+}
+
+.selected {
+    color: #bd1303; /* vibrant red */
 }
 
 section {
@@ -71,10 +99,19 @@ section {
     border-bottom: 2px solid #424242; /* grey 800 */
 }
 
+.filters {
+    padding: 0 5%;
+}
+
 .fire-house {
     border-bottom: 1px solid #424242; /* grey 800 */
 }
 
+.fire-house:last-child {
+    border-bottom: none;
+}
+
+/* no footer yet */
 footer {
     width: 90%;
     margin: 0;
@@ -111,8 +148,9 @@ h1 {
 }
 
 h1 a {
-    text-decoration: none;
+    color: #d6e3ff;
     color: #fff;
+    text-decoration: none;
 }
 
 h1 a:hover {
@@ -144,6 +182,10 @@ p a {
     text-decoration: none;
 }
 
+.filters p {
+    line-height: 1.2;
+}
+
 dt {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.8;
@@ -158,7 +200,7 @@ dd {
 }
 
 a.router-link-exact-active {
-    color: #c62828; /* red 800 */
+    color: #ffb4a7;
     text-decoration: none;
 }
 
