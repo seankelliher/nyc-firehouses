@@ -1,9 +1,14 @@
 <template>
-    <PageTitle title="Firehouses in the Staten Island" />
+    <PageTitle title="In Staten Island" />
 
     <PostalCodes
         :postals="postals"
         @chosenPostalCode="(postalCode) => filterByPostal(postalCode)"
+    />
+
+    <NeighborHoods
+        :neighborhoods="neighborhoods"
+        @chosenNeighborhood="(neighborhoodName) => filterByNeighborhood(neighborhoodName)"
     />
 
     <FireHouses
@@ -15,6 +20,7 @@
 <script>
 import PageTitle from "../components/PageTitle.vue";
 import PostalCodes from "../components/PostalCodes.vue";
+import NeighborHoods from "../components/NeighborHoods.vue";
 import FireHouses from "../components/FireHouses.vue";
 
 export default {
@@ -22,7 +28,7 @@ export default {
     data() {
         return {
             postals: [10301, 10302, 10303, 10304, 10305, 10306, 10307, 10308, 10309, 10310, 10312, 10314],
-            areas: ["areaStaten1", "areaStaten2", "areaStaten3"],
+            neighborhoods: ["Port Richmond", "Stapleton - St. George", "Willowbrook", "South Beach - Tottenville"],
             houses: []
         };
     },
@@ -66,11 +72,43 @@ export default {
                 }
             });
             this.houses = filteredHouses;
+        },
+        filterByNeighborhood(neighborhoodName) {
+            const localHouses = localStorage.getItem("housesStaten");
+            const localHousesParse = JSON.parse(localHouses);
+            let filteredHouses = [];
+
+            //const expr = neighborhoodName;
+            let neighborHoodCodes = [];
+            switch (neighborhoodName) {
+            case "Port Richmond" :
+                neighborHoodCodes = [10302, 10303, 10310]; // Port Richmond
+                break;
+            case "Stapleton - St. George" :
+                neighborHoodCodes = [10301, 10304, 10305]; // Stapleton - St. George
+                break;
+            case "Willowbrook" :
+                neighborHoodCodes = [10314]; // Willowbrook
+                break;
+            case "South Beach - Tottenville" :
+                neighborHoodCodes = [10306, 10307, 10308, 10309, 10312]; // South Beach - Tottenville
+                break;
+            default:
+                console.log("Something wrong here.");
+            }
+
+            localHousesParse.map(function(lhp) {
+                if (neighborHoodCodes.includes(Number(`${lhp.postcode}`)) === true) {
+                    filteredHouses.push(lhp);
+                }
+            });
+            this.houses = filteredHouses;
         }
     },
     components: {
         PageTitle,
         PostalCodes,
+        NeighborHoods,
         FireHouses
     }
 };

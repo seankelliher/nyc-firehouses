@@ -1,5 +1,5 @@
 <template>
-    <PageTitle title="Firehouses in the Bronx" />
+    <PageTitle title="In the Bronx" />
 
     <PostalCodes
         :postals="postals"
@@ -28,7 +28,7 @@ export default {
     data() {
         return {
             postals: [10451, 10452, 10453, 10454, 10455, 10456, 10457, 10458, 10459, 10460, 10461, 10462, 10463, 10464, 10465, 10466, 10467, 10469, 10471, 10473, 10474, 10475],
-            neighborhoods: ["Kingsbridge - Riverdale", "Northeast Bronx", "Fordham - Bronx Park", "Pelham - Throgs Neck", "Crotona - Tremont", "High Bridge - Morrisania", "Hunts Point - Mott Haven"],
+            neighborhoods: ["Crotona - Tremont", "Fordham - Bronx Park", "High Bridge - Morrisania", "Hunts Point - Mott Haven", "Kingsbridge - Riverdale", "Northeast Bronx", "Pelham - Throgs Neck"],
             houses: []
         };
     },

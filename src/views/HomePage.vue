@@ -1,7 +1,7 @@
 <template>
-    <section>
-        <PageTitle title="Home Page" />
-    </section>
+
+    <PageTitle title="Home Page" />
+
 </template>
 
 <script>
