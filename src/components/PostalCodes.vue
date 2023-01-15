@@ -1,6 +1,16 @@
 <template>
     <section class="filters">
-        <p @click="showPostals = !showPostals" class="common-link">Filter by postal code</p>
+        <p
+            @click="showPostals = !showPostals"
+            class="common-link">
+                Filter by postal code
+        </p>
+        <figure v-if="showPostals">
+            <img src="../../public/expand-less.svg">
+        </figure>
+        <figure v-if="!showPostals">
+            <img src="../../public/expand-more.svg">
+        </figure>
     </section>
     <section v-show="showPostals" class="filters">
         <button
