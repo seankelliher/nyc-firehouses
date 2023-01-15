@@ -61,6 +61,11 @@ nav {
     text-decoration: none;
 }
 
+figure {
+    margin: 0;
+    padding: 0;
+}
+
 button {
     margin: 0.5em 0.5em;
     padding: 0.25em 0.25em;
@@ -100,7 +105,14 @@ section {
 }
 
 .filters {
+    margin: 0;
     padding: 0 5%;
+    background: #fafafa; /* very light grey */
+    flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start; /* main axis */
+    align-items: center; /* cross axis */
 }
 
 .fire-house {
@@ -200,7 +212,7 @@ dd {
 }
 
 a.router-link-exact-active {
-    color: #ffb4a7;
+    color: #ffb4a7; /* light pink */
     text-decoration: none;
 }
 
