@@ -5,10 +5,10 @@
             class="common-link">
                 Filter by neighborhood
         </p>
-        <figure v-if="showNeighborhoods">
+        <figure class="icon" v-if="showNeighborhoods">
             <img src="../../public/expand-less.svg">
         </figure>
-        <figure v-if="!showNeighborhoods">
+        <figure class="icon" v-if="!showNeighborhoods">
             <img src="../../public/expand-more.svg">
         </figure>
     </section>
