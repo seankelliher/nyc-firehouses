@@ -61,8 +61,17 @@ nav {
     text-decoration: none;
 }
 
-figure {
+/* Classes for figure */
+.icon {
+    width: 24px;
     margin: 0;
+    padding: 0;
+}
+
+/* Classes for figure */
+.portrait {
+    width: 70%;
+    margin: 1em 15%;
     padding: 0;
 }
 
@@ -198,6 +207,12 @@ p a {
     line-height: 1.2;
 }
 
+figcaption {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
 dt {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.8;
@@ -232,7 +247,8 @@ a.router-link-exact-active {
 
     p,
     dt,
-    dd {
+    dd,
+    figcaption {
         font-size: 0.875em; /* 14px */
     }
 }
@@ -252,7 +268,8 @@ a.router-link-exact-active {
 
     p,
     dt,
-    dd {
+    dd,
+    figcaption {
         font-size: 0.9375em; /* 15px */
     }
 }
@@ -272,7 +289,8 @@ a.router-link-exact-active {
 
     p,
     dt,
-    dd {
+    dd,
+    figcaption {
         font-size: 1em; /* 16px */
     }
 }
