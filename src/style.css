@@ -40,41 +40,6 @@ nav {
     align-items: center; /* cross axis */
 }
 
-.nav-link {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    line-height: 1.8;
-    font-weight: 600;
-}
-
-.nav-link a {
-    color: #fff; /* white */
-    text-decoration: none;
-}
-
-@media all and (min-width: 300px) {
-    .nav-link {
-        font-size: 0.6875em;  /* 11 px */
-    }
-}
-
-@media all and (min-width: 400px) {
-    .nav-link {
-        font-size: 0.8125em; /* 13 px */
-    }
-}
-
-@media all and (min-width: 500px) {
-    .nav-link {
-        font-size: 0.9375em; /* 15 px */
-    }
-}
-
-@media all and (min-width: 600px) {
-    .nav-link {
-        font-size: 1.0625em; /* 17 px */
-    }
-}
-
 .common-link {
     color: #46464f; /* subtle dark blue */
 }
@@ -140,7 +105,7 @@ figcaption {
         font-size: 0.875em; /* 14px */
         margin-right: 5%;
         margin-left: 5%;
-    } 
+    }
 }
 
 @media all and (min-width: 400px) {
@@ -154,18 +119,18 @@ figcaption {
 @media all and (min-width: 500px) {
     figcaption {
         font-size: 1.0625em; /* 17px */
-    } 
+    }
 }
 
 @media all and (min-width: 600px) {
     figcaption {
         font-size: 1.125em; /* 18px */
-    } 
+    }
 }
 
 button {
-    margin: 0.5em 0.5em;
-    padding: 0.25em 0.25em;
+    margin: 0.5em; /* long hand is 0.5em 0.5em */
+    padding: 0.25em; /* longhand is 0.25em 0.25em */
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.6;
     font-weight: 400;
@@ -193,7 +158,7 @@ button:hover {
 
 @media all and (min-width: 500px) {
     button {
-        font-size: 1em; /* 16px */ 
+        font-size: 1em; /* 16px */
     }
 }
 
@@ -215,7 +180,6 @@ section {
     flex-flow: row wrap;
     justify-content: flex-start; /* main axis */
     align-items: flex-start; /* cross axis */
-    /*flex: 1;  needed for sticky footer */
 }
 
 .page-title {
@@ -253,38 +217,32 @@ footer {
 
 /* TRANSITIONS ARE BELOW */
 
-/* Content slides up and fades in, slides down and fades out */
-
-/* Used on HelpBox.vue and MapBox.vue */
-.slide-up-fade-in-out-enter-from {
-    opacity: 0;
-    transform: translateY(10px);
+/* Toggle - fade in and out */
+.toggle-fade-enter-active,
+.toggle-fade-leave-active {
+    transition: opacity 0.5s ease;
 }
 
-.slide-up-fade-in-out-leave-to {
+.toggle-fade-enter-from,
+.toggle-fade-leave-to {
     opacity: 0;
-    transform: translateY(10px);
-}
-
-.slide-up-fade-in-out-enter-active,
-.slide-up-fade-in-out-leave-active {
-    transition: all 1s ease-out;
 }
 
 /* FONT STYLES ARE BELOW */
+p {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.8;
+    font-weight: 400;
+}
+
+.filters p {
+    line-height: 1.2;
+}
+
 h1 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.2;
     font-weight: 700;
-}
-
-h1 a {
-    color: #fff;
-    text-decoration: none;
-}
-
-h1 a:hover {
-    text-decoration: none;
 }
 
 h2 {
@@ -301,21 +259,6 @@ h3 {
     width: 100%;
 }
 
-p {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    line-height: 1.8;
-    font-weight: 400;
-}
-
-p a {
-    color: #0e4996; /* dark blue */
-    text-decoration: none;
-}
-
-.filters p {
-    line-height: 1.2;
-}
-
 dt {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.8;
@@ -329,15 +272,44 @@ dd {
     color: #424242 /* grey 800 */;
 }
 
+.nav-link {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.8;
+    font-weight: 600;
+}
+
+p a {
+    color: #0e4996; /* dark blue */
+    text-decoration: none;
+}
+
+h1 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-link a {
+    color: #fff; /* white */
+    text-decoration: none;
+}
+
 a.router-link-exact-active {
     color: #ffb4a7; /* light pink */
     text-decoration: none;
 }
 
+h1 a:hover {
+    text-decoration: none;
+}
+
 /* FONTS MEDIA QUERIES ARE BELOW */
 @media all and (min-width: 300px) {
+    p {
+        font-size: 0.875em; /* 14px */
+    }
+
     h1 {
-        font-size: 1em; /*16px */
+        font-size: 1em; /* 16px */
     }
 
     h2 {
@@ -348,17 +320,21 @@ a.router-link-exact-active {
         font-size: 0.875em; /* 14px */
     }
 
-    p {
-        font-size: 0.875em; /* 14px */
-    }
-
     dt,
     dd {
         font-size: 0.875em; /* 14px */
     }
+
+    .nav-link {
+        font-size: 0.6875em;  /* 11 px */
+    }
 }
 
 @media all and (min-width: 400px) {
+    p {
+        font-size: 1em; /* 16px */
+    }
+
     h1 {
         font-size: 1.125em; /* 18px */
     }
@@ -371,17 +347,21 @@ a.router-link-exact-active {
         font-size: 1em; /* 16px */
     }
 
-    p {
-        font-size: 1em; /* 16px */
-    }
-
     dt,
     dd {
         font-size: 1em; /* 16px */
     }
+
+    .nav-link {
+        font-size: 0.8125em; /* 13 px */
+    }
 }
 
 @media all and (min-width: 500px) {
+    p {
+        font-size: 1.0625em; /* 17px */
+    }
+
     h1 {
         font-size: 1.25em; /* 20px */
     }
@@ -394,17 +374,21 @@ a.router-link-exact-active {
         font-size: 1.125em; /* 18px */
     }
 
-    p {
-        font-size: 1.0625em; /* 17px */
-    }
-
     dt,
     dd {
         font-size: 1.0625em; /* 17px */
     }
+
+    .nav-link {
+        font-size: 0.9375em; /* 15 px */
+    }
 }
 
 @media all and (min-width: 600px) {
+    p {
+        font-size: 1.125em; /* 18px */
+    }
+
     h1 {
         font-size: 1.375em; /* 22px */
     }
@@ -417,13 +401,12 @@ a.router-link-exact-active {
         font-size: 1.25em; /* 20px */
     }
 
-    p {
-        font-size: 1.125em; /* 18px */
-    }
-
     dt,
     dd {
         font-size: 1.125em; /* 18px */
     }
 
+    .nav-link {
+        font-size: 1.0625em; /* 17 px */
+    }
 }
