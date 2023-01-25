@@ -12,15 +12,17 @@
             <img src="../../public/expand-more.svg">
         </figure>
     </section>
-    <section v-show="showNeighborhoods" class="filters">
-        <button
-            v-for="neighborhood in neighborhoods"
-            :key="neighborhood.index"
-            @click="$emit('chosenNeighborhood', neighborhood), highlightButton($event)"
-        >
-            {{ neighborhood }}&nbsp;
-        </button>
-    </section>
+    <Transition name="toggle-fade">
+        <section v-show="showNeighborhoods" class="filters">
+            <button
+                v-for="neighborhood in neighborhoods"
+                :key="neighborhood.index"
+                @click="$emit('chosenNeighborhood', neighborhood), highlightButton($event)"
+            >
+                {{ neighborhood }}&nbsp;
+            </button>
+        </section>
+    </Transition>
 </template>
 
 <script>

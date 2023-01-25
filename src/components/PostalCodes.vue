@@ -12,15 +12,17 @@
             <img src="../../public/expand-more.svg">
         </figure>
     </section>
-    <section v-show="showPostals" class="filters">
-        <button
-            v-for="postal in postals"
-            :key="postal"
-            @click="$emit('chosenPostalCode', postal), highlightButton($event)"
-        >
-            {{ postal }}&nbsp;
-        </button>
-    </section>
+    <Transition name="toggle-fade">
+        <section v-show="showPostals" class="filters">
+            <button
+                v-for="postal in postals"
+                :key="postal"
+                @click="$emit('chosenPostalCode', postal), highlightButton($event)"
+            >
+                {{ postal }}&nbsp;
+            </button>
+        </section>
+    </Transition>
 </template>
 
 <script>
