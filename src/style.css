@@ -42,7 +42,6 @@ nav {
 
 .nav-link {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1em;
     line-height: 1.8;
     font-weight: 600;
 }
@@ -50,6 +49,30 @@ nav {
 .nav-link a {
     color: #fff; /* white */
     text-decoration: none;
+}
+
+@media all and (min-width: 300px) {
+    .nav-link {
+        font-size: 0.6875em;  /* 11 px */
+    }
+}
+
+@media all and (min-width: 400px) {
+    .nav-link {
+        font-size: 0.8125em; /* 13 px */
+    }
+}
+
+@media all and (min-width: 500px) {
+    .nav-link {
+        font-size: 0.9375em; /* 15 px */
+    }
+}
+
+@media all and (min-width: 600px) {
+    .nav-link {
+        font-size: 1.0625em; /* 17 px */
+    }
 }
 
 .common-link {
@@ -62,27 +85,90 @@ nav {
 }
 
 /* Classes for figure */
-.icon {
+figure.icon {
     width: 24px;
     margin: 0;
     padding: 0;
 }
 
 /* Classes for figure */
-.portrait {
-    width: 70%;
-    margin: 1em 15%;
+figure.portrait {
     padding: 0;
+}
+
+@media all and (min-width: 300px) {
+    figure.portrait {
+        width: 100%;
+        margin: 1em 0;
+        padding: 0;
+    }
+}
+
+@media all and (min-width: 400px) {
+    figure.portrait {
+        width: 90%;
+        margin: 1em 5%;
+        padding: 0;
+    }
+}
+
+@media all and (min-width: 500px) {
+    figure.portrait {
+        width: 80%;
+        margin: 1em 10%;
+        padding: 0;
+    }
+}
+
+@media all and (min-width: 600px) {
+    figure.portrait {
+        width: 70%;
+        margin: 1em 15%;
+        padding: 0;
+    }
+}
+
+figcaption {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #616161;
+}
+
+@media all and (min-width: 300px) {
+    figcaption {
+        font-size: 0.875em; /* 14px */
+        margin-right: 5%;
+        margin-left: 5%;
+    } 
+}
+
+@media all and (min-width: 400px) {
+    figcaption {
+        font-size: 1em; /* 16px */
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+@media all and (min-width: 500px) {
+    figcaption {
+        font-size: 1.0625em; /* 17px */
+    } 
+}
+
+@media all and (min-width: 600px) {
+    figcaption {
+        font-size: 1.125em; /* 18px */
+    } 
 }
 
 button {
     margin: 0.5em 0.5em;
     padding: 0.25em 0.25em;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1em;
     line-height: 1.6;
     font-weight: 400;
-    /*color: #001b3d;  dark blue */
     color: #46464f; /* subtle dark blue */
     background: #e0e2ec; /* steel grey */
     border: none;
@@ -91,6 +177,30 @@ button {
 button:hover {
     background: #c4c6d0; /* darker steel grey */
     cursor: pointer;
+}
+
+@media all and (min-width: 300px) {
+    button {
+        font-size: 0.875em; /* 14px */
+    }
+}
+
+@media all and (min-width: 400px) {
+    button {
+        font-size: 0.9375em; /* 15px */
+    }
+}
+
+@media all and (min-width: 500px) {
+    button {
+        font-size: 1em; /* 16px */ 
+    }
+}
+
+@media all and (min-width: 600px) {
+    button {
+        font-size: 1.0625em; /* 17px */
+    }
 }
 
 .selected {
@@ -161,7 +271,7 @@ footer {
     transition: all 1s ease-out;
 }
 
-/* FONT & "BUTTON" STYLES ARE BELOW */
+/* FONT STYLES ARE BELOW */
 h1 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.2;
@@ -169,7 +279,6 @@ h1 {
 }
 
 h1 a {
-    color: #d6e3ff;
     color: #fff;
     text-decoration: none;
 }
@@ -207,12 +316,6 @@ p a {
     line-height: 1.2;
 }
 
-figcaption {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
-}
-
 dt {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.8;
@@ -234,91 +337,93 @@ a.router-link-exact-active {
 /* FONTS MEDIA QUERIES ARE BELOW */
 @media all and (min-width: 300px) {
     h1 {
-        font-size: 1em;
+        font-size: 1em; /*16px */
     }
 
     h2 {
-        font-size: 1em; /* 16px */
-    }
-
-    h3 {
         font-size: 0.9375em; /* 15px */
     }
 
-    p,
+    h3 {
+        font-size: 0.875em; /* 14px */
+    }
+
+    p {
+        font-size: 0.875em; /* 14px */
+    }
+
     dt,
-    dd,
-    figcaption {
+    dd {
         font-size: 0.875em; /* 14px */
     }
 }
 
 @media all and (min-width: 400px) {
     h1 {
-        font-size: 1.2em;
+        font-size: 1.125em; /* 18px */
     }
 
     h2 {
-        font-size: 1.2em; /* 19.2px */
+        font-size: 1.0625em; /* 17px */
     }
 
     h3 {
         font-size: 1em; /* 16px */
     }
 
-    p,
+    p {
+        font-size: 1em; /* 16px */
+    }
+
     dt,
-    dd,
-    figcaption {
-        font-size: 0.9375em; /* 15px */
+    dd {
+        font-size: 1em; /* 16px */
     }
 }
 
 @media all and (min-width: 500px) {
     h1 {
-        font-size: 1.4em;
+        font-size: 1.25em; /* 20px */
     }
 
     h2 {
-        font-size: 1.4em; /* 22.4px */
+        font-size: 1.1875em; /* 19px */
     }
 
     h3 {
-        font-size: 1.1em; /* 17.6px */
+        font-size: 1.125em; /* 18px */
     }
 
-    p,
+    p {
+        font-size: 1.0625em; /* 17px */
+    }
+
     dt,
-    dd,
-    figcaption {
-        font-size: 1em; /* 16px */
+    dd {
+        font-size: 1.0625em; /* 17px */
     }
 }
 
 @media all and (min-width: 600px) {
     h1 {
-        font-size: 1.6em;
+        font-size: 1.375em; /* 22px */
     }
 
     h2 {
-        font-size: 1.6em; /* 25.6px */
+        font-size: 1.3125em; /* 21px */
     }
 
     h3 {
-        font-size: 1.2em; /* 19.2px */
+        font-size: 1.25em; /* 20px */
+    }
+
+    p {
+        font-size: 1.125em; /* 18px */
+    }
+
+    dt,
+    dd {
+        font-size: 1.125em; /* 18px */
     }
 
 }
-
-/* VARIOUS "CLASSES" FOR FONTS ARE BELOW */
-
-/* makes font red */
-.warn {
-    color: #d90416; /* dark red */
-}
-
-/* makes font light grey */
-.subtle {
-    color: #616161; /* grey 700 */
-}
-
