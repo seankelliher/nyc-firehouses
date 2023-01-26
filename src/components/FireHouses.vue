@@ -10,6 +10,11 @@
             <dd>{{ house.borough }}, {{ house.postcode }}</dd>
             <dd>Latitude: {{ house.latitude }}</dd>
             <dd>Longitude: {{ house.longitude }}</dd>
+            <dd>
+                <figure class="icon">
+                    <a :href="`https://www.google.com/maps/@${house.latitude},${house.longitude},18z/`" target="_blank"><img src="../../public/map.svg"></a>
+                </figure>
+            </dd>
         </dl>
     </section>
 </template>
