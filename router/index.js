@@ -5,6 +5,7 @@ import BrooklynPage from "../src/views/BrooklynPage.vue";
 import ManhattanPage from "../src/views/ManhattanPage.vue";
 import QueensPage from "../src/views/QueensPage.vue";
 import StatenPage from "../src/views/StatenPage.vue";
+import NotFound from "../src/views/NotFound.vue";
 
 const routes = [
     {
@@ -36,6 +37,11 @@ const routes = [
         path: "/staten",
         name: "Staten",
         component: StatenPage
+    },
+    {
+        path: "/:catchAll(.*)",
+        name: "NotFound",
+        component: NotFound
     }
 ];
 
