@@ -2,14 +2,17 @@
     <section class="filters">
         <p
             @click="showNeighborhoods = !showNeighborhoods"
-            class="common-link">
-                Filter by neighborhood
+            @keydown.enter="showNeighborhoods = !showNeighborhoods"
+            class="common-link"
+            tabindex="0"
+        >
+            Filter by neighborhood
         </p>
         <figure class="icon" v-if="showNeighborhoods">
-            <img src="../../public/expand-less.svg">
+            <img src="../../public/expand-less.svg" alt="expand less icon">
         </figure>
         <figure class="icon" v-if="!showNeighborhoods">
-            <img src="../../public/expand-more.svg">
+            <img src="../../public/expand-more.svg" alt="expand more icon">
         </figure>
     </section>
     <Transition name="toggle-fade">
