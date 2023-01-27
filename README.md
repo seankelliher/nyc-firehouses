@@ -19,7 +19,7 @@ This project is currently in development and nearing completion.
 ![screen shot of project](/screenshots/nyc-firehouses-screenshot3.png?s=600)
 
 * View - Queens firehouses, Fresh Meadows neighborhood.
-![screen shot of project](/screenshots/nyc-firehouses-screenshot3.png?s=600)
+![screen shot of project](/screenshots/nyc-firehouses-screenshot4.png?s=600)
 
 ## Installation and Setup Instructions
 
