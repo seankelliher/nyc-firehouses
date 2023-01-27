@@ -8,13 +8,14 @@ const app = express();
 // Middlewares
 // ========================
 app.use(express.static(__dirname + "/dist/")); // For Heroku deployment.
-//app.use(express.json()); // Without POST sends empty body to MongoDB.
 
 // ========================
 // Routes
 // ========================
+const token = process.env.APP_TOKEN; // In Heroku, "Open Data" token kept here.
+
 app.get("/bronx", (req, res) => {
-    fetch("https://data.cityofnewyork.us/resource/hc8x-tcnd.json?borough=Bronx")
+    fetch(`https://data.cityofnewyork.us/resource/hc8x-tcnd.json?$$app_token=${token}&borough=Bronx`)
         .then(res => res.json())
         .then(data => {
             res.send({ houses: data });
@@ -23,7 +24,7 @@ app.get("/bronx", (req, res) => {
 });
 
 app.get("/brooklyn", (req, res) => {
-    fetch("https://data.cityofnewyork.us/resource/hc8x-tcnd.json?borough=Brooklyn")
+    fetch(`https://data.cityofnewyork.us/resource/hc8x-tcnd.json?$$app_token=${token}&borough=Brooklyn`)
         .then(res => res.json())
         .then(data => {
             res.send({ houses: data });
@@ -32,7 +33,7 @@ app.get("/brooklyn", (req, res) => {
 });
 
 app.get("/manhattan", (req, res) => {
-    fetch("https://data.cityofnewyork.us/resource/hc8x-tcnd.json?borough=Manhattan")
+    fetch(`https://data.cityofnewyork.us/resource/hc8x-tcnd.json?$$app_token=${token}&borough=Manhattan`)
         .then(res => res.json())
         .then(data => {
             res.send({ houses: data });
@@ -41,7 +42,7 @@ app.get("/manhattan", (req, res) => {
 });
 
 app.get("/queens", (req, res) => {
-    fetch("https://data.cityofnewyork.us/resource/hc8x-tcnd.json?borough=Queens")
+    fetch(`https://data.cityofnewyork.us/resource/hc8x-tcnd.json?$$app_token=${token}&borough=Queens`)
         .then(res => res.json())
         .then(data => {
             res.send({ houses: data });
@@ -50,7 +51,7 @@ app.get("/queens", (req, res) => {
 });
 
 app.get("/staten", (req, res) => {
-    fetch("https://data.cityofnewyork.us/resource/hc8x-tcnd.json?borough=Staten%20Island")
+    fetch(`https://data.cityofnewyork.us/resource/hc8x-tcnd.json?$$app_token=${token}&borough=Staten%20Island`)
         .then(res => res.json())
         .then(data => {
             res.send({ houses: data });
@@ -65,10 +66,10 @@ app.get(/.*/, function(req, res) {
 // ========================
 // Listen
 // ========================
-/*app.listen(process.env.PORT || 4040, () => {
+app.listen(process.env.PORT, () => {
     console.log(`Server listening on port ${process.env.PORT}`);
-});*/
-
-app.listen(4040, () => {
-    console.log("Server listening on port 4040");
 });
+
+/* app.listen(4040, () => {
+    console.log("Server listening on port 4040");
+}); */
