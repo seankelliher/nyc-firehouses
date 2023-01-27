@@ -37,7 +37,7 @@ export default {
         // Using remotely -> /bronx
         // If localStorage is empty, fetch data.
         if (!localStorage.getItem("housesBronx")) {
-            fetch("http://localhost:4040/bronx")
+            fetch("/bronx")
                 .then((response) => {
                     if (response.ok) {
                         return response.json();
