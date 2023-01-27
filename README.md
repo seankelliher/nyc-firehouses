@@ -1,15 +1,25 @@
 [![MIT License on GitHub](https://img.shields.io/github/license/seankelliher/nyc-firehouses?style=flat-square)](/LICENSE.txt)
 ## NYC Firehouses
 
-A listing of firehouses in New York City pulled from NYC Open Data and built with Vue and Express.
+List of firehouses in New York City pulled from NYC Open Data and built with Vue.js, Express.js, and Node.js. Firehouses can be filtered by borough, postal code, or neighborhood. Each firehouse listing includes an area map. [View working component](https://nyc-firehouses.herokuapp.com). It's on a Heroku "eco-dyno" and may take a few seconds to "wake up."
 
 ## Project Status
 
-This project is currently in development. 
+This project is currently in development and nearing completion. 
 
 ## Project Screen Shot(s)
 
-Screenshots to come.
+* Starting view - message from Commissioner
+![screen shot of project](/screenshots/nyc-firehouses-screenshot1.png?s=600)
+
+* View - firehouses in Manhattan.
+![screen shot of project](/screenshots/nyc-firehouses-screenshot2.png?s=600)
+
+* View - Brooklyn firehouses, postal code 11216.
+![screen shot of project](/screenshots/nyc-firehouses-screenshot3.png?s=600)
+
+* View - Queens firehouses, Fresh Meadows neighborhood.
+![screen shot of project](/screenshots/nyc-firehouses-screenshot3.png?s=600)
 
 ## Installation and Setup Instructions
 
