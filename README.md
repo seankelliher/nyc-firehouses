@@ -29,7 +29,7 @@ To Start the Express server:
 
 To Visit App:
 
-Visit the localhost port displayed in the terminal after running `npm run dev`.
+Visit the localhost port displayed in the terminal after running `npm run dev`. You may need to disable your browser's Cross-Origin Restrictions.
 
 ## Reflection
 
@@ -38,7 +38,11 @@ Reflection to come.
 ## Acknowledgments
 
 * Firehouse data from [NYC Open Data](https://data.cityofnewyork.us/Public-Safety/FDNY-Firehouse-Listing/hc8x-tcnd).
+* Postal code and neighborhood information from [United Hospital Fund](https://www1.nyc.gov/assets/doh/downloads/pdf/ah/zipcodetable.pdf).
+* Portrait of Laura Kavanagh from the [FDNY](https://www.nyc.gov/site/fdny/about/overview/leadership/fire-commissioner.page).
 * Readme guidance from [Brenna Martenson](https://gist.github.com/martensonbj/6bf2ec2ed55f5be723415ea73c4557c4).
 * Linting guidance from [ESLint](https://eslint.org) and [Stylelint](https://stylelint.io).
+* Design guidance and icons from Google's [Material Design](https://material.io/design).
+* Accessibility guidance from [Chrome's](https://www.google.com/chrome/) Lighthouse and [Firefox's](https://www.mozilla.org/en-US/firefox/new/) Accessibility Tools.
 * Design guidance from Google's [Material Design](https://material.io/design).
 * Shields from [Shields](https://shields.io).
