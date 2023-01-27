@@ -1,5 +1,5 @@
 body {
-    margin: 0;
+    margin-top: 0;
 }
 
 /* img becomes no larger than actual size. */
@@ -38,15 +38,6 @@ nav {
     flex-flow: row wrap;
     justify-content: space-between; /* main axis */
     align-items: center; /* cross axis */
-}
-
-.common-link {
-    color: #46464f; /* subtle dark blue */
-}
-
-.common-link:hover {
-    cursor: pointer;
-    text-decoration: none;
 }
 
 /* Classes for figure */
@@ -278,9 +269,8 @@ dd {
     font-weight: 600;
 }
 
-p a {
-    color: #0e4996; /* dark blue */
-    text-decoration: none;
+.common-link {
+    color: #46464f; /* subtle dark blue */
 }
 
 h1 a {
@@ -299,6 +289,11 @@ a.router-link-exact-active {
 }
 
 h1 a:hover {
+    text-decoration: none;
+}
+
+.common-link:hover {
+    cursor: pointer;
     text-decoration: none;
 }
 
