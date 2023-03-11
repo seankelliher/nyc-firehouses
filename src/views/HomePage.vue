@@ -21,8 +21,6 @@
         <p><strong>Use this app to locate your local firehouse. Start by choosing a borough.</strong></p>
     </section>
 
-
-
 </template>
 
 <script>
