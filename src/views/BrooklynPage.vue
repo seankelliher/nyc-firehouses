@@ -37,7 +37,7 @@ export default {
         // Using remotely -> /brooklyn
         // If localStorage is empty, fetch data.
         if (!localStorage.getItem("housesBrooklyn")) {
-            fetch("/brooklyn")
+            fetch("/bk")
                 .then((response) => {
                     if (response.ok) {
                         return response.json();

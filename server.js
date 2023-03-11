@@ -14,7 +14,7 @@ app.use(express.static(__dirname + "/dist/")); // For Heroku deployment.
 // ========================
 const token = process.env.APP_TOKEN; // In Heroku, "Open Data" token kept here.
 
-app.get("/bronx", (req, res) => {
+app.get("/bx", (req, res) => {
     fetch(`https://data.cityofnewyork.us/resource/hc8x-tcnd.json?$$app_token=${token}&borough=Bronx`)
         .then(res => res.json())
         .then(data => {
@@ -23,7 +23,7 @@ app.get("/bronx", (req, res) => {
         .catch(error => console.error(error));
 });
 
-app.get("/brooklyn", (req, res) => {
+app.get("/bk", (req, res) => {
     fetch(`https://data.cityofnewyork.us/resource/hc8x-tcnd.json?$$app_token=${token}&borough=Brooklyn`)
         .then(res => res.json())
         .then(data => {
@@ -32,7 +32,7 @@ app.get("/brooklyn", (req, res) => {
         .catch(error => console.error(error));
 });
 
-app.get("/manhattan", (req, res) => {
+app.get("/mn", (req, res) => {
     fetch(`https://data.cityofnewyork.us/resource/hc8x-tcnd.json?$$app_token=${token}&borough=Manhattan`)
         .then(res => res.json())
         .then(data => {
@@ -41,7 +41,7 @@ app.get("/manhattan", (req, res) => {
         .catch(error => console.error(error));
 });
 
-app.get("/queens", (req, res) => {
+app.get("/qn", (req, res) => {
     fetch(`https://data.cityofnewyork.us/resource/hc8x-tcnd.json?$$app_token=${token}&borough=Queens`)
         .then(res => res.json())
         .then(data => {
@@ -50,7 +50,7 @@ app.get("/queens", (req, res) => {
         .catch(error => console.error(error));
 });
 
-app.get("/staten", (req, res) => {
+app.get("/si", (req, res) => {
     fetch(`https://data.cityofnewyork.us/resource/hc8x-tcnd.json?$$app_token=${token}&borough=Staten%20Island`)
         .then(res => res.json())
         .then(data => {
