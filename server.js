@@ -13,50 +13,81 @@ app.use(express.static(__dirname + "/dist/")); // For Heroku deployment.
 // Routes
 // ========================
 const token = process.env.APP_TOKEN; // In Heroku, "Open Data" token kept here.
+const errorMsg = "An error occured.";
 
 app.get("/bx", (req, res) => {
     fetch(`https://data.cityofnewyork.us/resource/hc8x-tcnd.json?$$app_token=${token}&borough=Bronx`)
-        .then(res => res.json())
+        .then(res => {
+            if (!res.ok) {
+                throw new Error(`${errorMsg} ${res.statusText}.`);
+            } else {
+                return res.json();
+            }
+        })
         .then(data => {
             res.send({ houses: data });
         })
-        .catch(error => console.error(error));
+        .catch(error => alert(error));
 });
 
 app.get("/bk", (req, res) => {
     fetch(`https://data.cityofnewyork.us/resource/hc8x-tcnd.json?$$app_token=${token}&borough=Brooklyn`)
-        .then(res => res.json())
+        .then(res => {
+            if (!res.ok) {
+                throw new Error(`${errorMsg} ${res.statusText}.`);
+            } else {
+                return res.json();
+            }
+        })
         .then(data => {
             res.send({ houses: data });
         })
-        .catch(error => console.error(error));
+        .catch(error => alert(error));
 });
 
 app.get("/mn", (req, res) => {
     fetch(`https://data.cityofnewyork.us/resource/hc8x-tcnd.json?$$app_token=${token}&borough=Manhattan`)
-        .then(res => res.json())
+        .then(res => {
+            if (!res.ok) {
+                throw new Error(`${errorMsg} ${res.statusText}.`);
+            } else {
+                return res.json();
+            }
+        })
         .then(data => {
             res.send({ houses: data });
         })
-        .catch(error => console.error(error));
+        .catch(error => alert(error));
 });
 
 app.get("/qn", (req, res) => {
     fetch(`https://data.cityofnewyork.us/resource/hc8x-tcnd.json?$$app_token=${token}&borough=Queens`)
-        .then(res => res.json())
+        .then(res => {
+            if (!res.ok) {
+                throw new Error(`${errorMsg} ${res.statusText}.`);
+            } else {
+                return res.json();
+            }
+        })
         .then(data => {
             res.send({ houses: data });
         })
-        .catch(error => console.error(error));
+        .catch(error => alert(error));
 });
 
 app.get("/si", (req, res) => {
     fetch(`https://data.cityofnewyork.us/resource/hc8x-tcnd.json?$$app_token=${token}&borough=Staten%20Island`)
-        .then(res => res.json())
+        .then(res => {
+            if (!res.ok) {
+                throw new Error(`${errorMsg} ${res.statusText}.`);
+            } else {
+                return res.json();
+            }
+        })
         .then(data => {
             res.send({ houses: data });
         })
-        .catch(error => console.error(error));
+        .catch(error => alert(error));
 });
 
 app.get(/.*/, function(req, res) {
