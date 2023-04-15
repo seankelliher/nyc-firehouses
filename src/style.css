@@ -248,11 +248,12 @@ footer {
     width: 90%;
     margin: 0;
     padding: 0 5%;
-    background: #001b3d; /* dark blue */
+    background: #000;
     flex: initial; /* flex: 0 1 auto */
-    position: sticky;
+    position: fixed;
     bottom: 0;
     left: 0;
+    text-align: center;
 }
 
 footer::before {
@@ -262,7 +263,7 @@ footer::before {
     bottom: 0;
     width: 2000px;
     left: 100%;
-    background: #001b3d; /* dark blue */
+    background: #000;
 }
 
 footer::after {
@@ -272,7 +273,7 @@ footer::after {
     bottom: 0;
     width: 2000px;
     right: 100%;
-    background: #001b3d; /* dark blue */
+    background: #000;
 }
 
 /* TRANSITIONS ARE BELOW */
@@ -303,8 +304,8 @@ p {
 
 /* Used in footer */
 .light-txt {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
     line-height: 1.2;
     color: #fff;
 }
