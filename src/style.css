@@ -236,11 +236,12 @@ section {
 }
 
 .fire-house {
-    border-bottom: 1px solid #424242; /* grey 800 */
+    border-top: 1px solid #424242; /* grey 800 */
 }
 
-.fire-house:last-child {
-    border-bottom: none;
+/* Removes top border from first "fire-house" element */
+section:nth-child(8) {
+    border-top: none;
 }
 
 footer {
@@ -257,7 +258,7 @@ footer {
 footer::before {
     content: "";
     position: absolute;
-    top: -1px;
+    top: 0;
     bottom: 0;
     width: 2000px;
     left: 100%;
@@ -267,7 +268,7 @@ footer::before {
 footer::after {
     content: "";
     position: absolute;
-    top: -1px;
+    top: 0;
     bottom: 0;
     width: 2000px;
     right: 100%;
@@ -302,6 +303,8 @@ p {
 
 /* Used in footer */
 .light-txt {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
     line-height: 1.2;
     color: #fff;
 }
