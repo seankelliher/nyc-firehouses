@@ -3,7 +3,7 @@
         <p
             @click="showPostals = !showPostals"
             @keydown.enter="showPostals = !showPostals"
-            class="common-link"
+            class="filter-txt"
             tabindex="0"
         >
             Filter by postal code

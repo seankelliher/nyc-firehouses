@@ -3,7 +3,7 @@
         <p
             @click="showNeighborhoods = !showNeighborhoods"
             @keydown.enter="showNeighborhoods = !showNeighborhoods"
-            class="common-link"
+            class="filter-txt"
             tabindex="0"
         >
             Filter by neighborhood
