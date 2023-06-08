@@ -1,7 +1,7 @@
 [![MIT License on GitHub](https://img.shields.io/github/license/seankelliher/nyc-firehouses?style=flat-square)](/LICENSE.txt)
 ## NYC Firehouses
 
-List of firehouses in New York City pulled from NYC Open Data and built with Vue.js, Express.js, and Node.js. Firehouses can be filtered by borough, postal code, or neighborhood. Each firehouse listing includes an area map. [View working component](https://nyc-firehouses.herokuapp.com). It's on a Heroku "eco-dyno" and may take a few seconds to "wake up."
+List of firehouses in New York City pulled from the NYC Open Data API and built with Vue.js, Express.js, and Node.js. Firehouses can be filtered by borough, postal code, or neighborhood. Each firehouse listing includes an area map. [View working component](https://nyc-firehouses.herokuapp.com). It's on a Heroku "eco-dyno" and may take a few seconds to "wake up."
 
 ## Project Screen Shot(s)
 
