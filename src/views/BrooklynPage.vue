@@ -42,7 +42,7 @@ export default {
                     if (response.ok) {
                         return response.json();
                     } else {
-                        return Promise.reject(response.status);
+                        return Promise.reject(`Error: ${response.status}, ${response.statusText}. Please try again later.`);
                     }
                 })
                 .then((data) => {
@@ -53,7 +53,7 @@ export default {
                 })
                 .catch((error) => {
                     console.log(error);
-                    alert("An error occurred. Please try again later.");
+                    alert(error);
                 });
         } else {
             // If localStorage is not empty, get data from there.

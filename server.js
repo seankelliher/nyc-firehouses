@@ -13,13 +13,12 @@ app.use(express.static(__dirname + "/dist/")); // For Heroku deployment.
 // Routes
 // ========================
 const token = process.env.APP_TOKEN; // In Heroku, "Open Data" token kept here.
-const errorMsg = "An error occured.";
 
 app.get("/bx", (req, res) => {
     fetch(`https://data.cityofnewyork.us/resource/hc8x-tcnd.json?$$app_token=${token}&borough=Bronx`)
         .then((res) => {
             if (!res.ok) {
-                throw new Error(`${errorMsg} ${res.statusText}.`);
+                throw new Error(res.status);
             } else {
                 return res.json();
             }
@@ -29,6 +28,8 @@ app.get("/bx", (req, res) => {
         })
         .catch((error) => {
             console.log(error);
+            const reason = Number(error.message);
+            res.sendStatus(reason);
         });
 });
 
@@ -36,7 +37,7 @@ app.get("/bk", (req, res) => {
     fetch(`https://data.cityofnewyork.us/resource/hc8x-tcnd.json?$$app_token=${token}&borough=Brooklyn`)
         .then((res) => {
             if (!res.ok) {
-                throw new Error(`${errorMsg} ${res.statusText}.`);
+                throw new Error(res.status);
             } else {
                 return res.json();
             }
@@ -46,6 +47,8 @@ app.get("/bk", (req, res) => {
         })
         .catch((error) => {
             console.log(error);
+            const reason = Number(error.message);
+            res.sendStatus(reason);
         });
 });
 
@@ -53,7 +56,7 @@ app.get("/mn", (req, res) => {
     fetch(`https://data.cityofnewyork.us/resource/hc8x-tcnd.json?$$app_token=${token}&borough=Manhattan`)
         .then((res) => {
             if (!res.ok) {
-                throw new Error(`${errorMsg} ${res.statusText}.`);
+                throw new Error(res.status);
             } else {
                 return res.json();
             }
@@ -63,6 +66,8 @@ app.get("/mn", (req, res) => {
         })
         .catch((error) => {
             console.log(error);
+            const reason = Number(error.message);
+            res.sendStatus(reason);
         });
 });
 
@@ -70,7 +75,7 @@ app.get("/qn", (req, res) => {
     fetch(`https://data.cityofnewyork.us/resource/hc8x-tcnd.json?$$app_token=${token}&borough=Queens`)
         .then((res) => {
             if (!res.ok) {
-                throw new Error(`${errorMsg} ${res.statusText}.`);
+                throw new Error(res.status);
             } else {
                 return res.json();
             }
@@ -80,6 +85,8 @@ app.get("/qn", (req, res) => {
         })
         .catch((error) => {
             console.log(error);
+            const reason = Number(error.message);
+            res.sendStatus(reason);
         });
 });
 
@@ -87,7 +94,7 @@ app.get("/si", (req, res) => {
     fetch(`https://data.cityofnewyork.us/resource/hc8x-tcnd.json?$$app_token=${token}&borough=Staten%20Island`)
         .then((res) => {
             if (!res.ok) {
-                throw new Error(`${errorMsg} ${res.statusText}.`);
+                throw new Error(res.status);
             } else {
                 return res.json();
             }
@@ -97,6 +104,8 @@ app.get("/si", (req, res) => {
         })
         .catch((error) => {
             console.log(error);
+            const reason = Number(error.message);
+            res.sendStatus(reason);
         });
 });
 
