@@ -33,8 +33,8 @@ export default {
         };
     },
     created() {
-        // Using locally -> http://localhost:4040/manhattan
-        // Using remotely -> /manhattan
+        // Using locally -> http://localhost:4040/mn
+        // Using remotely -> /mn
         // If localStorage is empty, fetch data.
         if (!localStorage.getItem("housesManhattan")) {
             fetch("/mn")
@@ -53,6 +53,7 @@ export default {
                 })
                 .catch((error) => {
                     console.log(error);
+                    alert("An error occurred. Please try again later.");
                 });
         } else {
             // If localStorage is not empty, get data from there.

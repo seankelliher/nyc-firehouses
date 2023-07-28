@@ -17,77 +17,87 @@ const errorMsg = "An error occured.";
 
 app.get("/bx", (req, res) => {
     fetch(`https://data.cityofnewyork.us/resource/hc8x-tcnd.json?$$app_token=${token}&borough=Bronx`)
-        .then(res => {
+        .then((res) => {
             if (!res.ok) {
                 throw new Error(`${errorMsg} ${res.statusText}.`);
             } else {
                 return res.json();
             }
         })
-        .then(data => {
+        .then((data) => {
             res.send({ houses: data });
         })
-        .catch(error => alert(error));
+        .catch((error) => {
+            console.log(error);
+        });
 });
 
 app.get("/bk", (req, res) => {
     fetch(`https://data.cityofnewyork.us/resource/hc8x-tcnd.json?$$app_token=${token}&borough=Brooklyn`)
-        .then(res => {
+        .then((res) => {
             if (!res.ok) {
                 throw new Error(`${errorMsg} ${res.statusText}.`);
             } else {
                 return res.json();
             }
         })
-        .then(data => {
+        .then((data) => {
             res.send({ houses: data });
         })
-        .catch(error => alert(error));
+        .catch((error) => {
+            console.log(error);
+        });
 });
 
 app.get("/mn", (req, res) => {
     fetch(`https://data.cityofnewyork.us/resource/hc8x-tcnd.json?$$app_token=${token}&borough=Manhattan`)
-        .then(res => {
+        .then((res) => {
             if (!res.ok) {
                 throw new Error(`${errorMsg} ${res.statusText}.`);
             } else {
                 return res.json();
             }
         })
-        .then(data => {
+        .then((data) => {
             res.send({ houses: data });
         })
-        .catch(error => alert(error));
+        .catch((error) => {
+            console.log(error);
+        });
 });
 
 app.get("/qn", (req, res) => {
     fetch(`https://data.cityofnewyork.us/resource/hc8x-tcnd.json?$$app_token=${token}&borough=Queens`)
-        .then(res => {
+        .then((res) => {
             if (!res.ok) {
                 throw new Error(`${errorMsg} ${res.statusText}.`);
             } else {
                 return res.json();
             }
         })
-        .then(data => {
+        .then((data) => {
             res.send({ houses: data });
         })
-        .catch(error => alert(error));
+        .catch((error) => {
+            console.log(error);
+        });
 });
 
 app.get("/si", (req, res) => {
     fetch(`https://data.cityofnewyork.us/resource/hc8x-tcnd.json?$$app_token=${token}&borough=Staten%20Island`)
-        .then(res => {
+        .then((res) => {
             if (!res.ok) {
                 throw new Error(`${errorMsg} ${res.statusText}.`);
             } else {
                 return res.json();
             }
         })
-        .then(data => {
+        .then((data) => {
             res.send({ houses: data });
         })
-        .catch(error => alert(error));
+        .catch((error) => {
+            console.log(error);
+        });
 });
 
 app.get(/.*/, function(req, res) {

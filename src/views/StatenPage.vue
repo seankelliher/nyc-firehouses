@@ -33,8 +33,8 @@ export default {
         };
     },
     created() {
-        // Using locally -> http://localhost:4040/staten
-        // Using remotely -> /staten
+        // Using locally -> http://localhost:4040/si
+        // Using remotely -> /si
         // If localStorage is empty, fetch data.
         if (!localStorage.getItem("housesStaten")) {
             fetch("/si")
@@ -53,6 +53,7 @@ export default {
                 })
                 .catch((error) => {
                     console.log(error);
+                    alert("An error occurred. Please try again later.");
                 });
         } else {
             // If localStorage is not empty, get data from there.
