@@ -12,7 +12,7 @@
             <dd>Longitude: {{ house.longitude }}</dd>
             <dd>
                 <figure class="icon">
-                    <a :href="`https://www.google.com/maps/@${house.latitude},${house.longitude},18z/`" target="_blank"><img src="../../public/map.svg" alt="map icon"></a>
+                    <a :href="`https://www.google.com/maps/@${house.latitude},${house.longitude},18z/`" target="_blank"><img src="/map.svg" alt="map icon"></a>
                 </figure>
             </dd>
         </dl>

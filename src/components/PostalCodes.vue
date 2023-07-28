@@ -9,10 +9,10 @@
             Filter by postal code
         </p>
         <figure class="icon" v-if="showPostals">
-            <img src="../../public/expand-less.svg" alt="expand less icon">
+            <img src="/expand-less.svg" alt="expand less icon">
         </figure>
         <figure class="icon" v-if="!showPostals">
-            <img src="../../public/expand-more.svg" alt="expand more icon">
+            <img src="/expand-more.svg" alt="expand more icon">
         </figure>
     </section>
     <Transition name="toggle-fade">
