@@ -42,7 +42,7 @@ export default {
                     if (response.ok) {
                         return response.json();
                     } else {
-                        return Promise.reject(`Error: ${response.status}, ${response.statusText}. Please try again later.`);
+                        return Promise.reject(`Error: ${response.status}, Data currently unavailable. Please try again later.`);
                     }
                 })
                 .then((data) => {
