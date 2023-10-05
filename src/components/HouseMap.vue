@@ -2,8 +2,7 @@
 import { ref, onMounted, onUnmounted } from "vue";
 import mapboxgl from "mapbox-gl";
 
-// Read only, restricted to single URL.
-//mapboxgl.accessToken = `${process.env.MAPBOX_FIREHOUSES_TOKEN}`;
+// Read only, restricted to requests from single URL.
 mapboxgl.accessToken = "pk.eyJ1Ijoic2s1NjQ2NzMiLCJhIjoiY2xuN2w4aTh1MG1vYzJybDhpZHRsZHI4NyJ9.nVK4D7Ukw99Y89dpIKdKzg";
 
 let map = ref(null);
