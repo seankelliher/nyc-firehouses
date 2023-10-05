@@ -1,24 +1,53 @@
+<script setup>
+import HeaderPart from "./components/HeaderPart.vue";
+import HouseMap from "./components/HouseMap.vue";
+import "../node_modules/mapbox-gl/dist/mapbox-gl.css"
+</script>
+
 <template>
-    <header>
-        <h1><a href="/">Firehouses in New York City</a></h1>
-    </header>
-
-    <FullNav />
-
-    <router-view></router-view>
-
-    <UniFooter />
+    <div id="container">
+        <HeaderPart headline="Where is the FDNY in your neighborhood?" />
+        <HouseMap />
+    </div>
 </template>
 
-<script>
-import FullNav from "./components/FullNav.vue";
-import UniFooter from "./components/UniFooter.vue";
-
-export default {
-    name: "App",
-    components: {
-        FullNav,
-        UniFooter
+<style>
+    /* Map styles here. Mixed results placing in style.css */
+    .mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
+        border-bottom-color: #ec1423;
     }
-};
-</script>
+
+    .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+        border-top-color: #ec1423;
+    }
+
+    .mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip {
+        border-bottom-color: #ec1423;
+    }
+
+    .mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
+        border-bottom-color: #ec1423;
+    }
+
+    .mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip {
+        border-top-color: #ec1423;
+    }
+
+    .mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip {
+        border-top-color: #ec1423;
+    }
+
+    .mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+        border-left-color: #ec1423;
+    }
+
+    .mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+        border-right-color: #ec1423;
+    }
+
+    .mapboxgl-popup-content {
+            border: 2px solid #0f86bd;
+            border: 2px solid #71787e;
+            background: #f6faff; /* darker */
+    }
+</style>
