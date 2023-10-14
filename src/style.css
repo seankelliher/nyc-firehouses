@@ -48,7 +48,7 @@ p {
 }
 
 /* Media queries for fonts */
-@media (width >= 300px) and (width <= 399px) {
+@media (min-width: 300px) and (max-width: 399px) {
     p {
         font-size: 0.875em; /* 14px */
     }
@@ -62,7 +62,7 @@ p {
     }
 }
 
-@media (width >= 400px) and (width <= 499px) {
+@media (min-width: 400px) and (max-width: 499px) {
     p {
         font-size: 0.9375em; /* 15px */
     }
@@ -76,7 +76,7 @@ p {
     }
 }
 
-@media (width >= 500px) and (width <= 599px) {
+@media (min-width: 500px) and (max-width: 599px) {
     p {
         font-size: 1em; /* 16px */
     }
@@ -90,7 +90,7 @@ p {
     }
 }
 
-@media (width >= 600px) {
+@media (min-width: 600px) {
     p {
         font-size: 1.0625em; /* 17px */
     }
