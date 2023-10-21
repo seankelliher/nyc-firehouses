@@ -1,7 +1,7 @@
 <script setup>
 import HeaderPart from "./components/HeaderPart.vue";
 import HouseMap from "./components/HouseMap.vue";
-import "../node_modules/mapbox-gl/dist/mapbox-gl.css"
+import "../node_modules/mapbox-gl/dist/mapbox-gl.css";
 </script>
 
 <template>
