@@ -5,7 +5,7 @@ import mapboxgl from "mapbox-gl";
 // Read only, restricted to requests from single URL.
 mapboxgl.accessToken = "pk.eyJ1Ijoic2s1NjQ2NzMiLCJhIjoiY2xuN2w4aTh1MG1vYzJybDhpZHRsZHI4NyJ9.nVK4D7Ukw99Y89dpIKdKzg";
 
-let map = ref(null);
+let map;
 const mapContainer = ref(null);
 
 
@@ -28,7 +28,7 @@ onMounted(() => {
         },
         trackUserLocation: true
     });
-    map.addControl(geolocate, "top-right")
+    map.addControl(geolocate, "top-right");
 
     // Display pop-up when user clicks on marker.
     map.on("click", (event) => {
@@ -41,7 +41,8 @@ onMounted(() => {
         }
         const feature = features[0];
 
-        const popup = new mapboxgl.Popup({ offset: [0, -15] })
+        // Pop up settings and content.
+        new mapboxgl.Popup({ offset: [0, -15] })
             .setLngLat(feature.geometry.coordinates)
             .setHTML(
                 `<h2>${feature.properties.facilityname}</h2>
