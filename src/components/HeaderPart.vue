@@ -1,8 +1,10 @@
 <script setup>
 defineProps({
-    headline: String,
-    required: true
-})
+    headline: {
+        type: String,
+        required: true
+    }
+});
 </script>
 
 <template>
