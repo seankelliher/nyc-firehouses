@@ -1,23 +1,27 @@
 {
-  "name": "nyc-firehouses",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "mapbox-gl": "^2.15.0",
-    "vue": "^3.3.4"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^4.2.3",
-    "eslint": "^8.50.0",
-    "eslint-plugin-vue": "^9.17.0",
-    "stylelint": "^15.10.3",
-    "stylelint-config-standard": "^34.0.0",
-    "vite": "^4.4.5"
-  }
+    "name": "nyc-firehouses",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "mapbox-gl": "^2.15.0",
+        "vue": "^3.3.4"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^4.2.3",
+        "eslint": "^8.50.0",
+        "eslint-plugin-vue": "^9.17.0",
+        "stylelint": "^15.10.3",
+        "stylelint-config-standard": "^34.0.0",
+        "vite": "^4.4.5"
+    },
+    "engines": {
+        "node": "20.11.0",
+        "npm": "10.3.0"
+    }
 }
