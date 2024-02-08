@@ -6,7 +6,7 @@ import "../node_modules/mapbox-gl/dist/mapbox-gl.css";
 
 <template>
     <div id="container">
-        <HeaderPart headline="Where is the FDNY in your neighborhood?" />
+        <HeaderPart headline="Firehouses in New York City" />
         <HouseMap />
     </div>
 </template>
