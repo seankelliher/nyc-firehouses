@@ -1,3 +1,8 @@
+/* Stylesheet uses Level 3 Media Queries. Level 4 coverage still spotty. */
+body {
+    background: #fdfcff;
+}
+
 #container {
     width: 90%;
     height: 90vh;
@@ -8,7 +13,6 @@
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: flex-start;
-    position: relative;
 }
 
 header {
@@ -39,14 +43,14 @@ h1 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 600;
-    color: #191c1e;
+    color: #1a1c1e;
 }
 
 p {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.6;
     font-weight: 400;
-    color: #191c1e;
+    color: #1a1c1e;
 }
 
 /* Media queries for fonts */
