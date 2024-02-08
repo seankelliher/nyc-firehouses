@@ -8,11 +8,11 @@ mapboxgl.accessToken = "pk.eyJ1Ijoic2s1NjQ2NzMiLCJhIjoiY2xuN2w4aTh1MG1vYzJybDhpZ
 let map;
 const mapContainer = ref(null);
 
-
+// Style is nyc-firehouses-streets.
 onMounted(() => {
     map = new mapboxgl.Map({
         container: mapContainer.value,
-        style: "mapbox://styles/sk564673/cln7v3co0076701nsagzl3il6",
+        style: "mapbox://styles/sk564673/clscekzo202ye01pbb4sp8um7",
         center: [-73.840, 40.702],
         zoom: 10.0
     });
@@ -64,6 +64,9 @@ onUnmounted(() => {
 
 <template>
     <div ref="mapContainer" class="map-container"></div>
+    <section>
+        <p>The FDNY operates 219 firehouses within its five boroughs and responds to more than a million emergencies every year. Since its inception in 1865, the Department has helped lead efforts to make New York the safest big city in the nation.</p>
+    </section>
 </template>
 
 <style scoped>
