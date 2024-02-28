@@ -65,7 +65,7 @@ onUnmounted(() => {
 <template>
     <div ref="mapContainer" class="map-container"></div>
     <section>
-        <p>The FDNY operates 219 firehouses within its five boroughs and responds to more than a million emergencies every year. Since its inception in 1865, the Department has helped lead efforts to make New York the safest big city in the nation.</p>
+        <p>The FDNY began in 1865 and now operates 219 firehouses within the five boroughs of the Bronx, Brooklyn, Manhattan, Queens, and Staten Island. It responds to more than a million emergencies every year.</p>
     </section>
 </template>
 
