@@ -35,6 +35,8 @@ A final challenge was deploying to Netlify and trying to use an environmental va
 ## Acknowledgments
 
 * Firehouse data from [NYC Open Data](https://data.cityofnewyork.us/Public-Safety/FDNY-Firehouse-Listing/hc8x-tcnd).
+* FDNY logo [Wikimedia](https://en.m.wikipedia.org/wiki/File:Emblem_of_the_New_York_City_Fire_Department.svg).
+* NYC logo [Wikimedia](https://en.wikipedia.org/wiki/File:NYC_Logo_Wolff_Olins.svg).
 * Readme guidance from [Brenna Martenson](https://gist.github.com/martensonbj/6bf2ec2ed55f5be723415ea73c4557c4).
 * Linting guidance from [ESLint](https://eslint.org) and [Stylelint](https://stylelint.io).
 * Design guidance and icons from Google's [Material Design](https://material.io/design).
