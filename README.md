@@ -3,7 +3,11 @@
 
 Map of firehouses in New York City built with Vue.js and Mapbox. [View working component](https://sean-kelliher-nyc-firehouses.netlify.app).
 
-## Project Screen Shot(s)
+## Project Status
+
+Next steps, I want to do more extensive accessibility and browser testing.
+
+## Project Screen Shot
 
 * Map with firehouse in Queens selected.
 ![screen shot of project](/screenshots/nyc-firehouses-screenshot1.png?s=600)
@@ -26,11 +30,11 @@ Visit the localhost port displayed in the terminal after running `npm run dev`.
 
 ## Reflection
 
-My goal was to build an app that allows NYC residents to quickly locate firehouses. I experimented with numerous ways. At first, I built a filtering system that let users search by neighborhood and zip code. This worked okay, but neighborhood names often lack clear boundaries. This can lead to confusion. With zip codes, people usually know their own zip code but what happens if they want to explore other areas? They would likely need to guess zip codes or consult another source for reference. In the end, a map seemed to be the best method.
+My goal was to build an app that allows NYC residents to quickly locate firehouses. I experimented with numerous ways. At first, I built a filtering system that let users search by neighborhood and zip code. This worked okay, but neighborhood names often lack clear boundaries. This can lead to confusion. With zip codes, people usually know their own zip code but not other areas. In the end, a map seemed the best method.
 
 I retrieved data from Open Data NYC and built the GeoJSON file MapBox needed from it. I considered trying to generate a GeoJSON file "on the fly" from Open Data NYC, but it added complexity. Since firehouse locations rarely change, manually building the GeoJSON file seemed to be a much easier and stable solution.
 
-A final challenge was deploying to Netlify and trying to use an environmental variable for Mapbox's access token. The deploy kept failing as Mapbox was unable to read its access token hidden in Netlify's environmental variable. As a work-around, I exposed the access token and restricted its usage to only work if a request originates from the app's Netlify URL. I'm grateful to Mapbox for having this very useful security feature.
+For design, I followed the color scheme and page layout used by the FDNY. I used Material design for guidance with other colors.
 
 ## Acknowledgments
 
