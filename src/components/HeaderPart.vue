@@ -9,7 +9,24 @@ defineProps({
 
 <template>
     <header>
-        <h1>{{ headline }}</h1>
+        <div class="items-left">
+            <figure class="logo-header">
+                <img src="/nyc-logo.svg" alt="Logo for New York City government">
+            </figure>
+            <div class="pipe">|</div>
+            <div class="header-text">
+                <a href="https://www.nyc.gov/site/fdny/index.page" target="_blank"><h1>{{ headline }}</h1></a>
+            </div>
+        </div>
+        <div class="items-right">
+            <div class="header-text">
+                <a href="https://www.nyc.gov/311/index.page" target="_blank">311</a>
+            </div>
+            <div class="pipe">|</div>
+            <div class="header-text">
+                <a href="https://www.nyc.gov/home/search/index.page" target="_blank">Search all NYC.gov websites</a>
+            </div>
+        </div>
     </header>
 </template>
 
