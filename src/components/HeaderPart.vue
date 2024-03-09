@@ -11,7 +11,8 @@ defineProps({
     <header>
         <div class="items-left">
             <figure class="logo-header">
-                <img src="/nyc-logo.svg" alt="Logo for New York City government">
+                <img src="/nyc-logo.svg" alt="logo for the New York City government">
+                <figcaption hidden>logo for the New York City government</figcaption>
             </figure>
             <div class="pipe">|</div>
             <div class="header-text">

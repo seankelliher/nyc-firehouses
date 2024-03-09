@@ -10,7 +10,8 @@
         </ul>
 
         <figure class="logo-footer">
-            <img src="/nyc-logo.svg" alt="Logo for New York City government">
+            <img src="/nyc-logo.svg" alt="logo for the New York City government">
+            <figcaption hidden>logo for the New York City government</figcaption>
         </figure>
     </footer>
 </template>
