@@ -12,7 +12,7 @@ const mapContainer = ref(null);
 onMounted(() => {
     map = new mapboxgl.Map({
         container: mapContainer.value,
-        style: "mapbox://styles/sk564673/clscekzo202ye01pbb4sp8um7",
+        style: "mapbox://styles/sk564673/cln7v3co0076701nsagzl3il6",
         center: [-73.840, 40.702],
         zoom: 10.0
     });
@@ -45,12 +45,14 @@ onMounted(() => {
         new mapboxgl.Popup({ offset: [0, -15] })
             .setLngLat(feature.geometry.coordinates)
             .setHTML(
-                `<h2>${feature.properties.facilityname}</h2>
-                <p>${feature.properties.facilityaddress}<br />
-                ${feature.properties.borough}, ${feature.properties.postcode}</p>
-                <p>Community Board: ${feature.properties.community_board}<br />
-                City Council District: ${feature.properties.community_council}<br />
-                Neighborhood: ${feature.properties.nta}</p>`
+                `<h4>${feature.properties.facilityname}</h4>
+                <dl>
+                    <dd>${feature.properties.facilityaddress}</dd>
+                    <dd>${feature.properties.borough}, ${feature.properties.postcode}</dd>
+                    <dd>Community Board: ${feature.properties.community_board}</dd>
+                    <dd>City Council District: ${feature.properties.community_council}</dd>
+                    <dd>Neighborhood: ${feature.properties.nta}</dd>
+                </dl>`
             )
             .addTo(map);
     });
@@ -64,9 +66,6 @@ onUnmounted(() => {
 
 <template>
     <div ref="mapContainer" class="map-container"></div>
-    <section>
-        <p>The FDNY began in 1865 and now operates 219 firehouses within the five boroughs of the Bronx, Brooklyn, Manhattan, Queens, and Staten Island. It responds to more than a million emergencies every year.</p>
-    </section>
 </template>
 
 <style scoped>
