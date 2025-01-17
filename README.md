@@ -43,6 +43,7 @@ For design, I followed the color scheme and page layout used by the FDNY. I used
 * NYC logo [Wikimedia](https://en.wikipedia.org/wiki/File:NYC_Logo_Wolff_Olins.svg).
 * Readme guidance from [Brenna Martenson](https://gist.github.com/martensonbj/6bf2ec2ed55f5be723415ea73c4557c4).
 * Linting guidance from [ESLint](https://eslint.org) and [Stylelint](https://stylelint.io).
-* Design guidance and icons from Google's [Material Design](https://material.io/design).
-* Accessibility guidance from [Chrome's](https://www.google.com/chrome/) Lighthouse and [Firefox's](https://www.mozilla.org/en-US/firefox/new/) Accessibility Tools.
+* Design guidance from Google's [Material Design](https://material.io/design).
+* Fonts and icons from [Google Fonts](https://fonts.google.com).
+* Fluid typography guidance from [Utopia](https://utopia.fyi).
 * Shields from [Shields](https://shields.io).
