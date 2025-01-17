@@ -360,11 +360,12 @@ h3 {
 }
 
 li {
-    font-family: Roboto, serif;
+    font-family: "Roboto", serif;
     font-optical-sizing: auto;
-    font-weight: 400;
+    font-weight: <weight>;
     font-style: normal;
-    font-variation-settings: "wdth" 100;
+    font-variation-settings:
+        "wdth" 100;
     font-size: var(--fs-1);
     line-height: 1.6;
     color: #fff;
@@ -379,16 +380,24 @@ li {
     flex: initial;
 }
 
-dt, dd {
-    font-family: "Roboto Serif", serif;
+dt {
+    font-family: "Roboto", serif;
     font-optical-sizing: auto;
-    font-weight: 500;
+    font-weight: 600;
     font-style: normal;
     font-variation-settings:
-        "wdth" 100,
-        "GRAD" 0;
-    font-size: var(--fs0);
-    line-height: 1.2;
+        "wdth" 100;
+    color: #1e1c00;
+    margin-left: 0;
+}
+
+dd {
+    font-family: "Roboto", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
     color: #1e1c00;
     margin-left: 0;
 }
