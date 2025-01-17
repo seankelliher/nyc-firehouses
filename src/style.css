@@ -1,3 +1,11 @@
+/* @link https://utopia.fyi/type/calculator?c=320,13,1.125,1280,19,1.125,2,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+:root {
+    --fs-1: clamp(0.7222rem, 0.6111rem + 0.5556vw, 1.0556rem);
+    --fs0: clamp(0.8125rem, 0.6875rem + 0.625vw, 1.1875rem);
+    --fs1: clamp(0.9141rem, 0.7734rem + 0.7031vw, 1.3359rem);
+    --fs2: clamp(1.0283rem, 0.8701rem + 0.791vw, 1.5029rem);
+}
+
 /* Stylesheet uses Level 3 Media Queries. Level 4 coverage still spotty. */
 body {
     background: #fdfcff;
@@ -38,10 +46,7 @@ header {
 header::before {
     content: "";
     position: absolute;
-    top: 0;
-    bottom: 0;
-    right: calc((100vw - 100%) / -2);
-    left: calc((100vw - 100%) / -2);
+    inset: 0 calc((100vw - 100%) / -2);
     background: #000;
     z-index: -1;
 }
@@ -113,10 +118,7 @@ figure.logo-header {
 .ribbon::before {
     content: "";
     position: absolute;
-    top: 0;
-    bottom: 0;
-    right: calc((100vw - 100%) / -2);
-    left: calc((100vw - 100%) / -2);
+    inset: 0 calc((100vw - 100%) / -2);
     background: #c00; /* longhand #cc0000 */
     z-index: -1;
 }
@@ -207,10 +209,7 @@ footer {
 footer::before {
     content: "";
     position: absolute;
-    top: 0;
-    bottom: 0;
-    right: calc((100vw - 100%) / -2);
-    left: calc((100vw - 100%) / -2);
+    inset: 0 calc((100vw - 100%) / -2);
     background: #000;
     z-index: -1;
 }
@@ -284,17 +283,24 @@ dl {
 
 /* Font styles and their media queries */
 p {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    line-height: 1.6;
+    font-family: Roboto, serif;
+    font-optical-sizing: auto;
     font-weight: 400;
-    margin-top: 0;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: var(--fs0);
+    line-height: 1.6;
     color: #1a1c1e;
+    margin-top: 0;
 }
 
 h1  {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Roboto Condensed", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: var(--fs-1);
     line-height: 1.5;
-    font-weight: 600;
     color: #fff;
 }
 
@@ -304,21 +310,27 @@ h1 a {
 }
 
 .pipe {
+    font-family: "Roboto Condensed", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: var(--fs-1);
+    line-height: 1.5;
+    color: #fff;
     margin: 0 0.5em;
     padding: 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 600;
-    color: #fff;
 }
 
 .header-text {
+    font-family: "Roboto Condensed", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: var(--fs-1);
+    line-height: 1.5;
+    color: #fff;
     margin: 0;
     padding: 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 500;
-    color: #fff;
 }
 
 .header-text a {
@@ -327,31 +339,45 @@ h1 a {
 }
 
 h2 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Roboto Condensed", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: var(--fs2);
     line-height: 1.5;
-    font-weight: 600;
     color: #fff;
 }
 
 h3 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Roboto Condensed", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: var(--fs1);
     line-height: 1.5;
-    font-weight: 600;
-    margin-bottom: 0.5em;
     color: #1a1c1e;
+    margin-bottom: 0.5em;
 }
 
 h4 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: Roboto, serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: var(--fs-1);
     line-height: 1.5;
-    font-weight: 500;
     color: #1a1c1e;
 }
 
 li {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: Roboto, serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: var(--fs-1);
     line-height: 1.6;
-    font-weight: 500;
     color: #fff;
 }
 
@@ -365,99 +391,15 @@ li {
 }
 
 dd {
-    margin-left: 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Roboto Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100,
+        "GRAD" 0;
+    font-size: var(--fs0);
     line-height: 1.6;
-    font-weight: 400;
     color: #1e1c00;
-}
-
-
-/* Media queries for fonts */
-@media (min-width: 300px) and (max-width: 399px) {
-    p, li, dd  {
-        font-size: 0.8125em; /* 13px */
-    }
-
-    h1, .pipe, .header-text {
-        font-size: 0.75em; /* 12px */
-    }
-
-    h2 {
-        font-size: 1.1875em; /* 19px */
-    }
-
-    h3 {
-        font-size: 1.0625em; /* 17px */
-    }
-
-    h4 {
-         font-size: 0.75em; /* 12px */
-    }
-}
-
-@media (min-width: 400px) and (max-width: 499px) {
-    p, li, dd  {
-        font-size: 0.9375em; /* 15px */
-    }
-
-    h1, .pipe, .header-text {
-        font-size: 0.8125em; /* 13px */
-    }
-
-    h2 {
-        font-size: 1.25em; /* 20px */
-    }
-
-    h3 {
-        font-size: 1.125em; /* 18 px */
-    }
-
-    h4 {
-        font-size: 0.875em; /* 14px */
-    }
-}
-
-@media (min-width: 500px) and (max-width: 599px) {
-    p, li, dd  {
-        font-size: 1.0625em; /* 17px */
-    }
-
-    h1, .pipe, .header-text {
-        font-size: 0.875em; /* 14px */
-    }
-
-    h2 {
-        font-size: 1.3125em; /* 21px */
-    }
-
-    h3 {
-        font-size: 1.1875em; /* 19px */
-    }
-
-    h4 {
-        font-size: 1em; /* 16px */
-    }
-}
-
-@media (min-width: 600px) {
-    p, li, dd  {
-        font-size: 1.1875em; /* 19px */
-    }
-
-    h1, .pipe, .header-text {
-        font-size: 0.9375em; /* 15px */
-    }
-
-    h2 {
-        font-size: 1.375em; /* 22px */
-    }
-
-    h3 {
-        font-size: 1.25em; /* 20px */
-    }
-
-    h4 {
-        font-size: 1.125em; /* 18 px */
-    }
+    margin-left: 0;
 }
