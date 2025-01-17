@@ -45,8 +45,8 @@ onMounted(() => {
         new mapboxgl.Popup({ offset: [0, -15] })
             .setLngLat(feature.geometry.coordinates)
             .setHTML(
-                `<h4>${feature.properties.facilityname}</h4>
-                <dl>
+                `<dl>
+                    <dt>${feature.properties.facilityname}</dt>
                     <dd>${feature.properties.facilityaddress}</dd>
                     <dd>${feature.properties.borough}, ${feature.properties.postcode}</dd>
                     <dd>Community Board: ${feature.properties.community_board}</dd>
